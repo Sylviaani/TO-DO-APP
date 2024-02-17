@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
       // Append the form to the form container
       formContainer.innerHTML = '';
       formContainer.appendChild(form);
-      saveData();
     },
     eventClick: function(info) {
       var event = info.event;
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
       // Append the form to the form container
       formContainer.innerHTML = '';
       formContainer.appendChild(form);
-      saveData();
 
       // Add delete button to the form
       var deleteButton = document.createElement('button');
@@ -49,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
         formContainer.innerHTML = ''; // Clear the form container after deleting
       });
       formContainer.appendChild(deleteButton);
-      saveData();
     }
   });
 
@@ -68,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <input type="datetime-local" id="endDate" name="endDate" value="${eventData.endDate || ''}">
       <br>
       <label for="reminder">Set Reminder:</label>
-      <input type="datetime-local" id="reminder" name="reminder" value="${eventData.reminder || ''}">
+      <input type="checkbox" id="reminder" name="reminder" value="${eventData.reminder || ''}">
       <br>
       <input type="submit" value="${eventData.start ? 'Update Task' : 'Add Task'}">
     `;
@@ -106,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Clear the form container after adding/updating the task
       formContainer.innerHTML = '';
-      saveData();
     });
 
     return form;
@@ -115,12 +111,4 @@ document.addEventListener('DOMContentLoaded', function() {
   function pad(num) {
     return num < 10 ? '0' + num : num;
   }
-  function saveData(){
-    localStorage.setItem("data", c.innerHTML);
-}
-function viewTask(){
-    containerlist.innerHTML = localStorage.getItem("data");
-}
-
 });
-viewTask();
