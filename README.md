@@ -14,6 +14,6 @@ PS. Here is a snippet of the project;
 
 This is my first time creating something like this, so of course there were a lot of technical issues encountered and resolved.
 
-i had a hard time initializing my FullCalendar; to get it to show on my website, to get it be accept click functions was even more harder. But, after series of debugging and researching, it finally worked!. I think I nearly cried when it did 😢. This particular issue really took a toll on me, because what's a Calendar TO-DO App without a calendar?. Other challenges came up along the way but nothing compared to this.
+I had a hard time initializing my FullCalendar; to get it to show on my website, to get it to accept click functions was even more harder. But, after series of debugging and researching, it finally worked!. I think I nearly cried when it did 😢. This particular issue really took a toll on me, because what's a Calendar TO-DO App without a calendar?. Other challenges came up along the way but nothing compared to this.
 
 I'm truly excited for this project to be the next big thing!. 😃
