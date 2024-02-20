@@ -118,3 +118,8 @@ body, h1, p, ul {
   input[type="submit"]:hover {
     background-color: #1a804d;
   }
+
+  .cursor-form {
+    position: absolute;
+    z-index: 1000;
+  }
