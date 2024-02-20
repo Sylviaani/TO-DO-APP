@@ -62,9 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
       formContainer.appendChild(deleteButton);
     }
   });
-
-  calendar.render();
-
+  
   function createTaskForm(dateString, eventData = {}) {
     var form = document.createElement('form');
     form.innerHTML = `
@@ -127,9 +125,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function displayFormAtCursor(form, cursorPosition) {
     formContainer.innerHTML = '';
-    formContainer.appendChild(form);
-    formContainer.style.left = cursorPosition.left;
-    formContainer.style.top = cursorPosition.top;
-    formContainer.classList.add('cursor-form');
+    document.body.appendChild(form);
+    form.style.position = 'absolute';
+    form.style.left = cursorPosition.left;
+    form.style.top = cursorPosition.top;
+    form.style.zIndex = '1000';
   }  
+
+  calendar.render();
 });
