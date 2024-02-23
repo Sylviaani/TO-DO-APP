@@ -15,18 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
       var date = info.date;
       var dateString = date.getFullYear() + '-' + pad((date.getMonth() + 1)) + '-' + pad(date.getDate());
 
-      var cursorPosition = {
-        left: info.jsEvent.clientX + 'px',
-        top: info.jsEvent.clientY + 'px',
-      };
-
       // Create a form to add task details
       var form = createTaskForm(dateString);
 
       // Append the form to the form container
-      formContainer.innerHTML = '';
       formContainer.appendChild(form);
-      displayFormAtCursor(form, cursorPosition);
     },
     eventClick: function(info) {
       var event = info.event;
@@ -38,18 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
         reminder: event.extendedProps.reminder || ''
       };
 
-      var cursorPosition = {
-        left: info.jsEvent.clientX + 'px',
-        top: info.jsEvent.clientY + 'px',
-      };
-
       // Create a form to display task details
       var form = createTaskForm(event.start.toISOString().slice(0, 16), eventData);
       // Append the form to the form container
-      formContainer.innerHTML = '';
       formContainer.appendChild(form);
-
-      displayFormAtCursor(form, cursorPosition);
 
       // Add delete button to the form
       var deleteButton = document.createElement('button');
@@ -124,16 +109,4 @@ document.addEventListener('DOMContentLoaded', function() {
   function pad(num) {
     return num < 10 ? '0' + num : num;
   }
-
-  function displayFormAtCursor(form, cursorPosition) {
-    formContainer.innerHTML = '';
-    formContainer.appendChild(form);
-    form.style.position = 'absolute';
-    form.style.left = cursorPosition.left;
-    form.style.top = cursorPosition.top + 'px';
-    form.style.zIndex = '1000';
-    formContainer.classList.add('cursor-form');
-  }  
-
-  
 });

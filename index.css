@@ -76,6 +76,7 @@ body, h1, p, ul {
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    margin-bottom: 50px;
   }
   
   .delete-button:hover {
@@ -97,14 +98,14 @@ body, h1, p, ul {
   label {
     padding: 10px;
     margin-left: 0;
-    width: 50px;
+    width: 100px;
     margin-top: 10px;
     display:contents;
   }
   
   input {
     padding: 5px;
-    width: 50px;
+    width: 80px;
     font-style: italic;
   }
   
@@ -119,10 +120,4 @@ body, h1, p, ul {
   
   input[type="submit"]:hover {
     background-color: #1a804d;
-  }
-
-  .cursor-form {
-    position: absolute;
-    z-index: 1000;
-    margin-top: 150px;
   }
