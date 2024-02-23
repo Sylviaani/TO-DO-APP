@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
       formContainer.appendChild(deleteButton);
     }
   });
+
+  calendar.render();
   
   function createTaskForm(dateString, eventData = {}) {
     var form = document.createElement('form');
@@ -125,12 +127,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function displayFormAtCursor(form, cursorPosition) {
     formContainer.innerHTML = '';
-    document.body.appendChild(form);
+    formContainer.appendChild(form);
     form.style.position = 'absolute';
     form.style.left = cursorPosition.left;
-    form.style.top = cursorPosition.top;
+    form.style.top = cursorPosition.top + 'px';
     form.style.zIndex = '1000';
+    formContainer.classList.add('cursor-form');
   }  
 
-  calendar.render();
+  
 });
